@@ -1,3 +1,4 @@
+import React, { useState, useEffect } from 'react';
 
 import './style.css';
 import './bootsnav.css';
@@ -7,32 +8,75 @@ import './animate.css';
 import './owl.carousel.min.css';
 import './owl.theme.default.min.css';
 import './responsive.css';
-
+import { FaCheckCircle, FaSpinner, FaGlobe } from 'react-icons/fa'; // Importing icons from react-icons
 
 function App() {
+  const [count1, setCount1] = useState(0);
+  const [count2, setCount2] = useState(0);
+  const [count3, setCount3] = useState(0);
+
+  useEffect(() => {
+    // First counter (0 to 1000)
+    const target1 = 100;
+    const duration1 = 15000;
+    const interval1Time = duration1 / target1;
+
+    const interval1 = setInterval(() => {
+      setCount1((prevCount) => {
+        if (prevCount < target1) {
+          return prevCount + 1;
+        } else {
+          clearInterval(interval1);
+          return prevCount;
+        }
+      });
+    }, interval1Time);
+
+    return () => clearInterval(interval1);
+  }, []);
+
+  useEffect(() => {
+    // Second counter (0 to 2000)
+    const target2 = 50;
+    const duration2 = 10000;
+    const interval2Time = duration2 / target2;
+
+    const interval2 = setInterval(() => {
+      setCount2((prevCount) => {
+        if (prevCount < target2) {
+          return prevCount + 1;
+        } else {
+          clearInterval(interval2);
+          return prevCount;
+        }
+      });
+    }, interval2Time);
+
+    return () => clearInterval(interval2);
+  }, []);
+
+  useEffect(() => {
+    // Third counter (0 to 3000)
+    const target3 = 50;
+    const duration3 = 10000;
+    const interval3Time = duration3 / target3;
+
+    const interval3 = setInterval(() => {
+      setCount3((prevCount) => {
+        if (prevCount < target3) {
+          return prevCount + 1;
+        } else {
+          clearInterval(interval3);
+          return prevCount;
+        }
+      });
+    }, interval3Time);
+
+    return () => clearInterval(interval3);
+  }, []);
   return (
     <div className="App">
     <>
-  {/* meta data */}
-  <meta charSet="utf-8" />
-  <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  {/* The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags */}
-  {/*font-family*/}
-  <link
-    href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&subset=devanagari,latin-ext"
-    rel="stylesheet"
-  />
-  {/* title of site */}
-  
- 
-			
-			
-
-  {/*[if lte IE 9]>
-      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-  <![endif]*/}
-  {/* top-area Start */}
   <header className="top-area">
     <div className="header-area">
       {/* Start Navigation */}
@@ -106,7 +150,8 @@ function App() {
             <a href="assets/download/browney.txt" download="">
             Postuler maintenant
             </a>
-          </div>
+          </div> 
+          
           {/*/.header-text*/}
         </div>
         {/*/.col*/}
@@ -114,7 +159,8 @@ function App() {
       {/* /.row*/}
     </div>
     {/* /.container*/}
-  </section>
+  </section> 
+ 
   {/*/.welcome-hero*/}
   {/*welcome-hero end */}
   {/*about start */}
@@ -155,7 +201,13 @@ Tunis (prochainement) : L'Aouina, Cité les Palmiers <br/>
                 
               </div>
             </div>
-          </div>
+          </div> 
+
+          <div>
+     
+    </div>
+
+
           <div className="col-sm-offset-1 col-sm-5">
             <div className="single-about-img">
               <img
@@ -203,7 +255,53 @@ Tunis (prochainement) : L'Aouina, Cité les Palmiers <br/>
         </div>
       </div>
     </div>
-  </section>
+  </section> 
+  <section id="education" className="education">
+  
+   
+  <div className="container">
+    <div className="education-horizontal-timeline">
+      <div className="row">
+        <div className="col-sm-4">
+          <div className="single-horizontal-timeline">
+            <div className="experience-time">
+              <h2>Dossiers validés
+              </h2>
+            </div>
+           
+            <h1>  <FaCheckCircle style={{ color: 'green', marginRight: '30px' }} />  + {count1}</h1>
+            {/*/.timeline*/}
+          </div>
+        </div>
+        <div className="col-sm-4">
+          <div className="single-horizontal-timeline">
+            <div className="experience-time">
+              <h2>Dossiers en cours
+              </h2>
+             
+            
+              {/*/.timeline-content*/}
+            </div>
+            <h1> <FaSpinner style={{ color: 'orange', marginRight: '30px' }} />  +  {count2}</h1>
+            {/*/.timeline*/}
+          </div>
+        </div>
+        <div className="col-sm-4">
+          <div className="single-horizontal-timeline">
+            <div className="experience-time">
+              <h2>Partenaires à l'étranger
+              </h2>
+            
+            </div>
+            <h1>
+            <FaGlobe style={{ color: 'blue', marginRight: '30px' }} />  + {count3}</h1>
+            {/*/.timeline*/}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
   {/*/.about*/}
   {/*about end */}
   {/*education start */}
@@ -493,20 +591,22 @@ Tunis (prochainement) : L'Aouina, Cité les Palmiers <br/>
         Immigrer</h2>
       </div>
       <div className="container">
-      <h4>
-      Pensiez-vous s’établir au Canada pour y travailler…"Bienvenue canada immigration"se  spécialise dans le soutien en matière d’immigration dû essentiellement à la complexité de la réglementation, et au besoin d’être représenté par un professionnel. <br /> {' '} <br />
- 
-
- Ce sont autant de décisions importantes de notre vie courante, qui amèneront appréhensions et, questionnements, qui nous exigeront réflexion, moyens financiers, mais surtout un savoir et un savoir- faire auquel chacun de nous n’est , ni  forcément  préparé, ni outillé. <br /> {' '} <br />
- 
- Le but ultime de Bienvenue Canada immigration est de vous offrir les meilleurs conseils et services afin de vous assurer  : <br /> {' '} <br />
- 
- - La meilleure option de vous établir au Canada, eu égard à votre  profil,  à travers l’analyse de votre admissibilité conformément aux grilles de sélection et à la réglementation en vigueur.<br /> {' '} <br />
- - De réduire les délais de traitements des demandes, engendrés par des dossiers incomplets ou complexes,<br /> {' '} <br />
- - De vous représenter, au meilleur de nos connaissances et de notre expertise,  auprès des instantes administratives et judiciaires fédérales ou provinciales.
-      </h4>
-        {/*/.gallery-content*/}
+      <div className="education-horizontal-timeline">
+        <div className="row">
+          <div className='immm'>
+          <div className="col-sm-4">
+       <img src='https://res.cloudinary.com/dqmhtibfm/image/upload/c_scale,w_300/v1728300244/461686964_397934080024992_2164055834110112573_n_a6a6sv.jpg' /> <br/>{' '}<br/> 
+          </div>
+          <div className="col-sm-4">
+         <img src='https://res.cloudinary.com/dqmhtibfm/image/upload/c_scale,w_300/v1728300243/448637873_328391340312600_4456661122956899813_n_dgljsk.jpg' /> <br/>{' '}<br/> 
+          </div>
+          <div className="col-sm-4">
+          <img src='https://res.cloudinary.com/dqmhtibfm/image/upload/c_scale,w_300/v1728300244/461325469_394908110327589_1370934135166326436_n_tfrv95.jpg' /> <br/>{' '}<br/> 
+          </div>
+        </div>
+        </div>
       </div>
+    </div>
       {/*/.container*/}
     </div>
     {/*/.portfolio-details*/}
