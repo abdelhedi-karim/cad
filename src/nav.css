@@ -1,0 +1,73 @@
+/* Navbar items in the same line for larger screens (PC) */
+@media (min-width: 992px) {
+    .navbar-nav {
+        display: flex; /* Flexbox to keep items in the same line */
+        justify-content: flex-end; /* Align items to the right */
+        align-items: center; /* Vertically center the nav items */
+     
+    }
+    
+    .navbar-nav .nav-link {
+        font-size: 14px; /* Make font size smaller on larger screens */
+        padding: 8px 15px; /* Adjust padding for compactness */
+        color: blue;
+    }
+
+    .logoo {
+        width: 80px; /* Adjust logo size for PC */
+    }
+}
+
+/* Navbar adjustments for smaller screens (mobile) */
+@media (max-width: 568px) {
+    .navbar-nav {
+        text-align: center; /* Center text in the navbar */
+        flex-direction: column; /* Stack items vertically */
+    }
+
+    .navbar-nav .nav-link {
+        font-size: 14px; /* Make the font size smaller for mobile */
+        padding: 5px 0; /* Reduce padding for smaller touch area */
+        width: 100%; /* Ensure full-width items on mobile */
+        color: blue;
+    }
+
+    .logoo {
+        width: 60px; /* Adjust logo size for mobile */
+    }
+
+    .navbar-toggler {
+        font-size: 24px; /* Adjust toggle icon size */
+    }
+
+    .navbar-collapse {
+        transition: all 0.3s ease-in-out; /* Smooth transition for collapse */
+    }
+}
+
+/* Common Styles */
+.navbar-toggler {
+    border: none; /* Remove default border */
+    font-size: 20px; /* Toggle icon size */
+}
+
+.navbar-toggler span {
+    font-size: 30px; /* Icon size */
+    color: #333; /* Icon color */
+}
+
+.navbar-collapse {
+    transition: all 0.3s ease; /* Smooth open/close transition */
+}
+
+/* Navbar item styles for all screens */
+.navbar-nav .nav-link {
+    font-size: 16px; /* Default font size */
+    padding: 10px 20px; /* Default padding */
+}
+
+/* Adjust toggle button */
+.btn-close-navbar {
+    width: 10%; /* Full width */
+    margin-top: auto; /* Push button to bottom */
+}
