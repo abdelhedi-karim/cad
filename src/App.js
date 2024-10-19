@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-
+import { QRCodeSVG } from 'qrcode.react'; // Import the QRCodeSVG component
 import './nav.css';
 import './style.css';
 import './bootsnav.css';
@@ -21,6 +21,7 @@ const images = [
   
 ];
 function App() {
+  const url = "https://cad-liart.vercel.app/";
   const [currentIndex, setCurrentIndex] = useState(0);
   const [formulaires, setFormulaires] = useState([]);
     const [error, setError] = useState('');
@@ -205,6 +206,7 @@ function App() {
           <Nav.Link  href="#Nos agences">Nos agences</Nav.Link>
           <Nav.Link  href="#portfolio">Immigrer</Nav.Link>
           <Nav.Link  href="#contact">Contact</Nav.Link>
+          <Nav.Link  href="./Qr">QR</Nav.Link>
         </Nav>
         {/* Close Button at the Bottom */}
        
@@ -1021,6 +1023,11 @@ function App() {
     </div>
     {/*/.container*/}
   </section>
+  <div style={{ textAlign: 'center', marginTop: '50px' }}>
+      <h1>Scan the QR Code</h1>
+      <QRCodeSVG value={url} size={200} /> {/* Use QRCodeSVG */}
+      <p>Scan the QR code to visit the link</p>
+    </div>
   {/*/.contact*/}
   {/*contact end */}
   {/*footer-copyright start*/}
