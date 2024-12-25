@@ -30,7 +30,52 @@ font-family: 'Poppins', sans-serif;
     margin: 0;
 }
 
-
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    perspective: 1000px; /* Adds depth for the 3D effect */
+  }
+  
+  .image-card {
+    width: 200px;
+    height: 200px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transform-origin: center;
+    transition: transform 0.8s ease, box-shadow 0.5s ease;
+  }
+  
+  .image-card img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+  }
+  
+  .image-card:hover {
+    transform: rotateY(25deg) translateZ(15px) scale(1.1); /* Tilts and scales the image */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4); /* Enhances shadow */
+  }
+  
+  @keyframes float {
+    0% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+    100% {
+      transform: translateY(0px);
+    }
+  }
+  
+  .image-card:hover img {
+    animation: float 2s infinite ease-in-out; /* Floating animation on hover */
+  }
+  
+  
 .immm{
     margin-left: 40px;
 } 
@@ -271,16 +316,17 @@ nav.navbar.bootsnav .navbar-toggle i{color: blue;}
 /*-------------------------------------
         3.  Welcome-hero
 --------------------------------------*/
-.welcome-hero{
+.welcome-hero {
     display: flex;
     align-items: center;
     justify-content: center;
-    position:relative;
-    background:url(https://res.cloudinary.com/dqmhtibfm/image/upload/c_scale,h_800,w_1920/v1727988226/what-you-need-to-know-about-the-Schengen-Zone_atog8r.jpg)no-repeat;
-    background-size:cover;
+    position: relative;
+    background-size: cover;
     background-position: center;
-    height:890px;
-}
+    height: 890px;
+    width: 100%;
+    transition: background-image 1s ease-in-out; /* Smooth transition */
+  }
 .welcome-hero:before{
     position:absolute;
     content: " ";

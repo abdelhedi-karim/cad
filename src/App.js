@@ -20,12 +20,37 @@ const images = [
   'https://res.cloudinary.com/dqmhtibfm/image/upload/c_scale,h_200,w_200/v1728392585/433016233_272985682519833_555918190679344703_n_i2imcc.jpg'
   
 ];
+const images1 = [
+  "https://res.cloudinary.com/dqmhtibfm/image/upload/c_scale,h_800,w_1920/v1727988226/what-you-need-to-know-about-the-Schengen-Zone_atog8r.jpg",
+ "https://res.cloudinary.com/dqmhtibfm/image/upload/v1727986503/welcome-banner_jo1wkb.jpg",
+ ];
+const images3 = [
+  "https://res.cloudinary.com/dqmhtibfm/image/upload/c_scale,w_150/v1727989860/360_F_104479185_98OwiNHENKbunQqpf283ZCQN9PJBPoDP_nzp3mh.webp",
+  "https://res.cloudinary.com/dqmhtibfm/image/upload/c_scale,h_97,w_150/v1727990013/360_F_65124908_UpNHzTdQn2HNAIT8yYqybMQeGfsRmVc7_yn5cae.webp",
+  "https://res.cloudinary.com/dqmhtibfm/image/upload/c_scale,h_97,w_150/v1727990013/flag-of-the-european-union-eu-with-a-grunge-texture_t4vday.webp",
+];
 function App() {
   const url = "https://cad-liart.vercel.app/";
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentIndex1, setCurrentIndex1] = useState(0);
+  const [currentIndex2, setCurrentIndex2] = useState(0);
   const [formulaires, setFormulaires] = useState([]);
+  const [currentImages, setCurrentImages] = useState(images3);
+  const [currentImage1, setCurrentImage1] = useState(0);
     const [error, setError] = useState('');
-
+    const navigateToURL = () => {
+      const url =
+        "https://www.facebook.com/profile.php?id=100094252105697&mibextid=wwXIfr&rdid=ItvhR5pYzpcCgQzQ&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2FDEjQrTosDEp6PC1h%2F%3Fmibextid%3DwwXIfr";
+      window.location.href = url;
+    };
+    useEffect(() => {
+      const interval = setInterval(() => {
+        setCurrentImage1((prevImage) => (prevImage + 1) % images1.length);
+      }, 2000);
+  
+      return () => clearInterval(interval); // Cleanup on unmount
+    }, []);
+  
     useEffect(() => {
         const fetchFormulaires = async () => {
             try {
@@ -137,6 +162,20 @@ function App() {
     const intervalId = setInterval(nextSlide, 3000); // Change slide every 3 seconds
     return () => clearInterval(intervalId); // Clear interval on unmount
   }, []);
+  const nextSlide1 = () => {
+    setCurrentIndex1((prevIndex) => (prevIndex + 2) % images.length);
+  };
+  useEffect(() => {
+    const intervalId = setInterval(nextSlide1, 3000); // Change slide every 3 seconds
+    return () => clearInterval(intervalId); // Clear interval on unmount
+  }, []);
+  const nextSlide2 = () => {
+    setCurrentIndex2((prevIndex) => (prevIndex + 3) % images.length);
+  };
+  useEffect(() => {
+    const intervalId = setInterval(nextSlide2, 3000); // Change slide every 3 seconds
+    return () => clearInterval(intervalId); // Clear interval on unmount
+  }, []);
   useEffect(() => {
     // Second counter (0 to 2000)
     const target2 = 50;
@@ -159,7 +198,7 @@ function App() {
 
   useEffect(() => {
     // Third counter (0 to 3000)
-    const target3 = 50;
+    const target3 = 20;
     const duration3 = 10000;
     const interval3Time = duration3 / target3;
 
@@ -176,8 +215,21 @@ function App() {
 
     return () => clearInterval(interval3);
   }, []);
+
+
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImages((prevImages) => {
+        const [first, ...rest] = prevImages;
+        return [...rest, first]; // Rotate images by moving the first to the end
+      });
+    }, 5000); // Change every 5 seconds
+
+    return () => clearInterval(interval); // Clean up interval on unmount
+  }, []);
   return (
-    <div>
+    <div  >
  
      <Navbar bg="light" expand="lg" fixed="top">
      <Navbar.Toggle 
@@ -201,12 +253,30 @@ function App() {
     
       <Navbar.Collapse id="basic-navbar-nav" className={isOpen ? "show" : ""}>
         <Nav className=" className='navbar-nav'">
-          <Nav.Link  href="#education">Procédures</Nav.Link>
-          <Nav.Link  href="#skills">Nos services</Nav.Link>
-          <Nav.Link  href="#Nos agences">Nos agences</Nav.Link>
-          <Nav.Link  href="#portfolio">Immigrer</Nav.Link>
-          <Nav.Link  href="#contact">Contact</Nav.Link>
-          <Nav.Link  href="./Qr">QR</Nav.Link>
+          <Nav.Link style={{
+              animation: "pulse 2s infinite", // Adds pulsing animation
+              textShadow: "0 0 8px rgba(0, 0, 255, 0.8), 0 0 20px rgba(0, 0, 255, 0.6)", // Adds glow
+          }}  href="#education">Procédures</Nav.Link>
+          <Nav.Link style={{
+              animation: "pulse 2s infinite", // Adds pulsing animation
+              textShadow: "0 0 8px rgba(0, 0, 255, 0.8), 0 0 20px rgba(0, 0, 255, 0.6)", // Adds glow
+          }}  href="#skills">Nos services</Nav.Link>
+          <Nav.Link style={{
+              animation: "pulse 2s infinite", // Adds pulsing animation
+              textShadow: "0 0 8px rgba(0, 0, 255, 0.8), 0 0 20px rgba(0, 0, 255, 0.6)", // Adds glow
+          }}  href="#Nos agences">Nos agences</Nav.Link>
+          <Nav.Link style={{
+              animation: "pulse 2s infinite", // Adds pulsing animation
+              textShadow: "0 0 8px rgba(0, 0, 255, 0.8), 0 0 20px rgba(0, 0, 255, 0.6)", // Adds glow
+          }}  href="#portfolio">Immigrer</Nav.Link>
+          <Nav.Link style={{
+              animation: "pulse 2s infinite", // Adds pulsing animation
+              textShadow: "0 0 8px rgba(0, 0, 255, 0.8), 0 0 20px rgba(0, 0, 255, 0.6)", // Adds glow
+          }}  href="#contact">Contact</Nav.Link>
+          <Nav.Link style={{
+              animation: "pulse 2s infinite", // Adds pulsing animation
+              textShadow: "0 0 8px rgba(0, 0, 255, 0.8), 0 0 20px rgba(0, 0, 255, 0.6)", // Adds glow
+          }}  href="./Qr">QR</Nav.Link>
         </Nav>
         {/* Close Button at the Bottom */}
        
@@ -215,71 +285,27 @@ function App() {
   {/* /.top-area*/}
   {/* top-area End */}
   {/*welcome-hero start */}
-  <section id="welcome-hero" className="welcome-hero">
+  <section id="welcome-hero" 
+   className="welcome-hero"
+   style={{
+     backgroundImage: `url(${images1[currentImage1]})`,
+   }}>
     <div className="container">
       <div className="row">
         <div className="col-md-12 text-center">
-          <div className="header-text">
-           
-             <img className="logoo" src='https://res.cloudinary.com/dqmhtibfm/image/upload/c_scale,w_150/v1727989860/360_F_104479185_98OwiNHENKbunQqpf283ZCQN9PJBPoDP_nzp3mh.webp' /> {' '}
-             <img className="logoo" src='https://res.cloudinary.com/dqmhtibfm/image/upload/c_scale,h_97,w_150/v1727990013/360_F_65124908_UpNHzTdQn2HNAIT8yYqybMQeGfsRmVc7_yn5cae.webp' /> {' '}
-             <img className="logoo" src='https://res.cloudinary.com/dqmhtibfm/image/upload/c_scale,h_97,w_150/v1727990013/flag-of-the-european-union-eu-with-a-grunge-texture_t4vday.webp' /> 
-            
-            <p>
-            Laissez un professionnel prendre soin de votre projet d'immigration ainsi que votre atterrissage</p>
-            <div className="card-container">
-      {/* Clickable link to toggle the form */}
-      <a href="/" onClick={handleLinkClick} className="card-link">
-        {showForm ? 'Close Form' : 'Postuler maintenant'} {/* Change text based on form visibility */}
-      </a>
-
-      {/* Form to be displayed/hidden based on showForm state */}
-      {showForm && (
-        <div className="form-card">
-          <img
-            className="logoo"
-            src="https://res.cloudinary.com/dqmhtibfm/image/upload/c_scale,w_100/v1727988019/384192148_175238912294511_1146351560083594850_n_t5inpi.jpg"
-            alt="Logo"
-          />
-          <form onSubmit={handleSubmit}>
-            <div className="form-group">
-              <label htmlFor="name">Name:</label>
-              <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} required />
-            </div>
-            <div className="form-group">
-              <label htmlFor="email">Email:</label>
-              <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} required />
-            </div>
-            <div className="form-group">
-              <label htmlFor="phone">Phone Number:</label>
-              <input type="tel" id="phone" name="phone" value={formData.phone} onChange={handleChange} required />
-            </div>
-            <div className="form-group">
-              <label htmlFor="passport">Upload Passport:</label>
-              <input type="file" id="passport" name="passport" accept="application/pdf" onChange={handleChange} required />
-            </div>
-            <div className="form-group">
-              <label htmlFor="b3">Upload B3:</label>
-              <input type="file" id="b3" name="b3" accept="application/pdf" onChange={handleChange} required />
-            </div>
-            <div className="form-group">
-              <label htmlFor="diplome">Upload Diplome:</label>
-              <input type="file" id="diplome" name="diplome" accept="application/pdf" onChange={handleChange} required />
-            </div>
-            <div className="form-group">
-              <label htmlFor="acte">Upload Acte:</label>
-              <input type="file" id="acte" name="acte" accept="application/pdf" onChange={handleChange} required />
-            </div>
-            <div className="form-group">
-              <button type="submit" className="submit-btn">Submit</button>
-            </div>
-          </form>
+          <h1 style={{
+             color: "white",
+             fontSize: "8rem",
+             textShadow: "0 0 8px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.6)",
+             animation: "pulse 2s infinite", // Adds pulsing animation
+          }}>CAD GO</h1>
+        <div className="image-container">
+      {currentImages.map((src, index) => (
+        <div className="image-card" key={index}>
+          <img src={src} alt={`Image ${index + 1}`} />
         </div>
-      )}
+      ))}
     </div>
-          </div> 
-          
-          {/*/.header-text*/}
         </div>
         {/*/.col*/}
       </div>
@@ -291,9 +317,14 @@ function App() {
   {/*/.welcome-hero*/}
   {/*welcome-hero end */}
   <>
-  <section id="about" className="about">
+  <section id="about" className="about" >
     <div className="section-heading text-center">
-      <h2>à propos de nous</h2>
+      <h1
+      style={{ color: 'blue' ,
+        textShadow: "0 0 8px rgba(0, 0, 255, 0.8), 0 0 20px rgba(0, 0, 255, 0.6)", // Adds glow
+        animation: "pulse 2s infinite", // Adds pulsing animation
+        fontSize: "5rem",
+     }}>à propos de nous</h1>
     </div>
     <div className="container">
       <div className="about-content">
@@ -302,28 +333,114 @@ function App() {
             <div className="single-about-txt">
            
               <div className="row">
-              <h4  style={{ color: 'blue' }}>
+              <h4  style={{ color: 'blue' ,
+                  textShadow: "0 0 8px rgba(0, 0, 255, 0.8), 0 0 20px rgba(0, 0, 255, 0.6)", // Adds glow
+         // Adds pulsing animation
+                  fontSize: "2.8rem",
+               }}>
               🌍 Opportunités d'emploi à l'international !  <br/>
-              🔥 Vous rêvez de travailler au Canada, en Australie, en Allemagne (Ausbildung), en Suisse (Ausbildung), en Finlande, au Danemark, en Norvège, en Irlande ou en Belgique 🔥  
+                
+              </h4>
+           <center>
+
+           
+               <img 
+               style={{
+                width: "40px",
+                height: "40px",
+               marginLeft : "0px",
+               marginBottom: "20px",
+               marginTop: "20px"
+              
+               }}
+               src='https://res.cloudinary.com/dqmhtibfm/image/upload/c_scale,w_150/v1727989860/360_F_104479185_98OwiNHENKbunQqpf283ZCQN9PJBPoDP_nzp3mh.webp' />{" "}
+                <img 
+               style={{
+                width: "40px",
+                height: "40px",
+                marginLeft : "30px",
+                marginBottom: "20px",
+                    marginTop: "20px"
+               }}
+               src='https://res.cloudinary.com/dqmhtibfm/image/upload/v1727990013/360_F_65124908_UpNHzTdQn2HNAIT8yYqybMQeGfsRmVc7_yn5cae.webp' />{" "}
+                <img 
+               style={{
+                width: "40px",
+                height: "40px",
+                marginLeft : "30px",
+                marginBottom: "20px" ,
+                    marginTop: "20px"
+               }}
+               src='https://res.cloudinary.com/dqmhtibfm/image/upload/v1727990013/flag-of-the-european-union-eu-with-a-grunge-texture_t4vday.webp' />{" "}
+                <img 
+               style={{
+                width: "40px",
+                height: "40px",
+                marginLeft : "30px",
+                marginBottom: "20px" ,
+                    marginTop: "20px"
+               }}
+               src='https://res.cloudinary.com/dqmhtibfm/image/upload/v1734985910/australia-flag__46117.1639690361.1280.1280_i2pkis.webp' />
+               </center>
+                <h4  style={{ color: 'blue' ,
+                  textShadow: "0 0 8px rgba(0, 0, 255, 0.8), 0 0 20px rgba(0, 0, 255, 0.6)", // Adds glow
+         // Adds pulsing animation
+                  fontSize: "2.8rem",
+               }}>
+             
+               Vous rêvez de travailler au Canada, en Australie, en Allemagne (Ausbildung), en Suisse (Ausbildung), en Finlande, au Danemark, en Norvège, en Irlande ou en Belgique  🌍  
               </h4>
               <div className="col-sm-4">
                   <div className="single-about-add-info">
-                    <h3  style={{ color: 'blue' }}>phone</h3>
-                    <p  style={{ color: 'blue' }}>+ 216 92 602 851</p>
-                  </div>
-                </div>
-                <div className="col-sm-4">
-                  <div className="single-about-add-info">
-                    <h3  style={{ color: 'blue' }}>email</h3>
-                    <p  style={{ color: 'blue' }}>cadgocanadago@gmail.com</p>
+                  <div 
+                  style={{
+                    display: "flex",
+                    alignItems: "center", // Corrected to camelCase
+                    justifyContent: "flex-start", // Corrected to camelCase
+                   
+                  }}>
+                      <img onClick={navigateToURL} style={{marginLeft : "45px"}} src='https://res.cloudinary.com/dqmhtibfm/image/upload/c_scale,w_60/v1735114634/360_F_532200355_odKN9Ou3WB6iHWJTFIElFtJbTuzJspY6-removebg-preview_nc1ki9.png'  /> 
+                      <img style={{marginLeft : "50px"}} src='https://res.cloudinary.com/dqmhtibfm/image/upload/c_scale,w_60/v1735114635/360_F_532200382_KL6CDaZcusiZO9nO5TD7hWQEz8Ko6BZB-removebg-preview_isgezl.png' /> 
+                      <img style={{marginLeft : "30px"}} src='https://res.cloudinary.com/dqmhtibfm/image/upload/c_scale,h_100,w_100/v1735115241/tiktok-logo-pictures-98vku1w29x2enwhu-removebg-preview_gma1m0.png' />
+                     </div>
+                    <h3  style={{ color: 'blue' ,
+                        textShadow: "0 0 8px rgba(0, 0, 255, 0.8), 0 0 20px rgba(0, 0, 255, 0.6)", // Adds glow
+                     
+                        fontSize: "2rem",
+                      }}>📞 {' '} phone</h3>
+                    <p  style={{ color: 'blue' ,
+                        textShadow: "0 0 8px rgba(0, 0, 255, 0.8), 0 0 20px rgba(0, 0, 255, 0.6)", // Adds glow
+                   
+                        fontSize: "2rem",
+                     }}>+ 216 92 602 851</p> <br/>
+                     <p  style={{ color: 'blue' ,
+                        textShadow: "0 0 8px rgba(0, 0, 255, 0.8), 0 0 20px rgba(0, 0, 255, 0.6)", // Adds glow
+                   
+                        fontSize: "2rem",
+                     }}>+ 216 92 602 851</p> <br/>
+                      <h3  style={{ color: 'blue' ,
+                        textShadow: "0 0 8px rgba(0, 0, 255, 0.8), 0 0 20px rgba(0, 0, 255, 0.6)", // Adds glow
+                   
+                        fontSize: "2rem",
+                     }}>📧 email</h3> <br/>
+                    <p  style={{ color: 'blue' , 
+                        textShadow: "0 0 8px rgba(0, 0, 255, 0.8), 0 0 20px rgba(0, 0, 255, 0.6)", // Adds glow
+                     
+                        fontSize: "2rem",
+                     }}>cadgocanadago@gmail.com</p>
+                    
                   </div>
                 </div>
               </div>
             </div>
           </div>
           <div className="col-sm-offset-1 col-sm-5">
-            <div className="single-about-img">
-              <img
+            <div >
+              <img 
+              style={{
+                animation: "pulse 2s infinite", // Adds pulsing animation
+                textShadow: "0 0 8px rgba(0, 0, 255, 0.8), 0 0 20px rgba(0, 0, 255, 0.6)", // Adds glow
+              }}
                 src="https://res.cloudinary.com/dqmhtibfm/image/upload/v1727988019/384192148_175238912294511_1146351560083594850_n_t5inpi.jpg"
                 alt="profile_image"
               />
@@ -338,7 +455,7 @@ function App() {
   {/*/.about*/}
  
 </>
-<centre><section id="stat" className="education">
+<centre><section id="stat" className="education"  >
   
    
   <div className="container">
@@ -348,11 +465,19 @@ function App() {
         <div className="col-sm-4">
           <div className="single-horizontal-timeline">
             <div className="experience-time">
-           <center> <h2 style={{ color: 'green'}} >+{count1} Dossiers <br/> validés <FaCheckCircle style={{ color: 'green', marginRight: '10px' }} />
+           <center> <h2 style={{ 
+             fontSize: "4.5rem", // Makes the text larger
+             color: "green",
+             textShadow: "0 0 8px rgba(0, 255, 0, 0.8), 0 0 20px rgba(0, 255, 0, 0.6)", // Adds glow
+             animation: "pulse 2s infinite", // Adds pulsing animation
+           }} >+{count1} Dossiers <br/> validés <FaCheckCircle style={{ color: 'green', marginRight: '10px' }} />
             </h2></center>
             <center> <div className="carousel"> 
      
-     <img className="carousel-image" src={images[currentIndex]} alt={`Slide ${currentIndex}`}  />
+     <img className="carousel-image"
+     style={{
+      borderRadius: "10%", // Correct camelCase property
+    }} src={"https://res.cloudinary.com/dqmhtibfm/image/upload/c_scale,w_200/v1734698698/DALL_E_2024-12-20_13.04.44_-_An_illustrative_image_representing_Dossiers_valid%C3%A9s___A_stack_of_neatly_organized_and_stamped_documents_symbolizing_approval_with_a_prominent_green_sgiovs.webp"}  />
    
    </div></center>
               
@@ -364,12 +489,20 @@ function App() {
         <div className="col-sm-4">
           <div className="single-horizontal-timeline">
             <div className="experience-time">
-            <center>  <h2 style={{ color: 'orange' }}>+{count2} Dossiers en <br/> cours <FaSpinner style={{ color: 'orange', marginRight: '10px' }} />
+            <center>  <h2 style={{
+             fontSize: "4.5rem", // Makes the text larger
+             color: "orange",
+             textShadow: "0 0 8px rgba(255, 165, 0, 0.8), 0 0 20px rgba(255, 165, 0, 0.6)", // Adds glow
+             animation: "pulse 2s infinite", // Adds pulsing animation
+            }}>+{count2} Dossiers en <br/> cours <FaSpinner style={{ color: 'orange', marginRight: '10px' }} />
               </h2></center>
              
               <center>   <div className="carousel"> 
      
-     <img className="carousel-image" src={images[currentIndex]} alt={`Slide ${currentIndex}`}  />
+     <img className="carousel-image"
+     style={{
+      borderRadius: "10%", // Correct camelCase property
+    }} src={"https://res.cloudinary.com/dqmhtibfm/image/upload/c_scale,w_200/v1734698697/DALL_E_2024-12-20_13.04.47_-_An_illustrative_image_representing_Dossiers_en_cours___A_pile_of_open_files_and_papers_with_a_progress_bar_or_hourglass_symbolizing_ongoing_work._The_vq8nir.webp"}  />
    
    </div></center>
               
@@ -381,13 +514,25 @@ function App() {
         <div className="col-sm-4">
           <div className="single-horizontal-timeline">
             <div className="experience-time">
-            <center>  <h2 style={{ color: 'blue' }}>+{count3} Partenaires <br/>à l'étranger <FaGlobe style={{ color: 'blue', marginRight: '10px' }} />
+            <center>  <h2 style={{ 
+               fontSize: "4.5rem", // Makes the text larger
+               color: "blue",
+               textShadow: "0 0 8px rgba(0, 0, 255, 0.8), 0 0 20px rgba(0, 0, 255, 0.6)", // Adds glow
+               animation: "pulse 2s infinite", // Adds pulsing animation
+             }}>+{count3} Partenaires <br/>à l'étranger <FaGlobe style={{ color: 'blue', marginRight: '10px' }} />
               </h2> </center>
             
             </div>
             <center> <div className="carousel"> 
      
-     <img className="carousel-image" src={images[currentIndex]} alt={`Slide ${currentIndex}`}  />
+            <img
+  className="carousel-image"
+  style={{
+    borderRadius: "10%", // Correct camelCase property
+  }}
+  src="https://res.cloudinary.com/dqmhtibfm/image/upload/c_scale,w_200/v1734984255/DALL_E_2024-12-23_21.03.22_-_An_elegant_image_illustrating_international_partnerships_featuring_a_globe_surrounded_by_interconnected_hands_or_people_from_diverse_cultures._The_ba_zr3khg.webp"
+/>
+
    
    </div></center>
           </div>
@@ -398,9 +543,14 @@ function App() {
 </section></centre>
  
   {/*/.about*/} 
-  <section id="Nos agences" className="education">
+  <section id="Nos agences" className="education" >
     <div className="section-heading text-center">
-      <h2>Nos agences
+      <h2 
+       style={{ color: 'blue' ,
+        textShadow: "0 0 8px rgba(0, 0, 255, 0.8), 0 0 20px rgba(0, 0, 255, 0.6)", // Adds glow
+        animation: "pulse 2s infinite", // Adds pulsing animation
+        fontSize: "5rem",
+     }}>Nos agences
       </h2>
     </div>
     <div className="container">
@@ -408,8 +558,13 @@ function App() {
         <div className="row">
           <div className="col-sm-4">
             <div className="single-horizontal-timeline">
-              <div className="experience-time"  style={{ color: 'blue' }}>
-                <h2>📍 Sfax : Taniour Km 1<br/> devant CNAM
+              <div className="experience-time"  style={{ color: 'blue' ,
+                textShadow: "0 0 8px rgba(0, 0, 255, 0.8), 0 0 20px rgba(0, 0, 255, 0.6)", // Adds glow
+                
+              }}>
+                <h2 style={{
+                       fontSize: "2.1rem",
+                }}>📍 Sfax : Taniour Km 1<br/> devant CNAM
                 </h2>
               </div>
               {/*/.experience-time*/}
@@ -420,7 +575,10 @@ function App() {
               <div className="timeline">
                 <div className="timeline-content">
                  
-                  <p className="description"  style={{ color: 'blue' }}>
+                  <p className="description"  style={{ color: 'blue' ,
+                    textShadow: "0 0 8px rgba(0, 0, 255, 0.8), 0 0 20px rgba(0, 0, 255, 0.6)", // Adds glow
+                    fontSize: "2.1rem",
+                  }}>
                  
 📞 Contactez-nous :
 92602851
@@ -435,8 +593,14 @@ function App() {
           </div>
           <div className="col-sm-4">
             <div className="single-horizontal-timeline">
-              <div className="experience-time"  style={{ color: 'blue' }}>
-                <h2>📍 Tunis (prochainement) : L'Aouina, Cité les Palmiers
+              <div className="experience-time"  style={{ color: 'blue' , 
+          
+                textShadow: "0 0 8px rgba(0, 0, 255, 0.8), 0 0 20px rgba(0, 0, 255, 0.6)", // Adds glow
+               }}>
+                <h2
+                 style={{
+                  fontSize: "2.1rem",
+           }}>📍 Tunis l aouina cités les palmiers devant amen bank <br />immeuble Omar 1 ère étage
                 </h2>
                
               </div>
@@ -448,7 +612,11 @@ function App() {
               <div className="timeline">
                 <div className="timeline-content">
                  
-                  <p className="description"  style={{ color: 'blue' }}>
+                  <p className="description"  style={{ color: 'blue' , 
+                    
+                    textShadow: "0 0 8px rgba(0, 0, 255, 0.8), 0 0 20px rgba(0, 0, 255, 0.6)", // Adds glow
+                    fontSize: "2.1rem",
+                   }}>
                 
 📞 Contactez-nous :
 92917603
@@ -468,9 +636,14 @@ function App() {
   </section>
   {/*about end */}
   {/*education start */}
-  <section id="education" className="education">
+  <section id="education" className="education"  >
     <div className="section-heading text-center">
-      <h2>Procédures
+      <h2 
+       style={{ color: 'blue' ,
+        textShadow: "0 0 8px rgba(0, 0, 255, 0.8), 0 0 20px rgba(0, 0, 255, 0.6)", // Adds glow
+        animation: "pulse 2s infinite", // Adds pulsing animation
+        fontSize: "5rem",
+     }}>Procédures
       </h2>
     </div>
     <div className="container">
@@ -478,19 +651,25 @@ function App() {
         <div className="row">
           <div className="col-sm-4">
             <div className="single-horizontal-timeline">
-              <div className="experience-time" style={{ color: 'blue' }}>
-                <h2>Votre demande
-                </h2>
+              <div className="experience-time" style={{ color: 'blue' ,
+                   fontSize: "2.5rem", // Makes the text larger
+                 textShadow: "0 0 8px rgba(0, 0, 255, 0.8), 0 0 20px rgba(0, 0, 255, 0.6)", // Adds glow
+                 animation: "pulse 2s infinite", // Adds pulsing animation
+               }}>
+                <h1 
+                 style={{
+                  fontSize: "3.1rem",
+           }}>Votre demande
+                </h1>
               </div>
-              {/*/.experience-time*/}
-              <div className="timeline-horizontal-border">
-                <i className="fa fa-circle" aria-hidden="true" />
-                <span className="single-timeline-horizontal" />
-              </div>
+             
               <div className="timeline">
                 <div className="timeline-content">
                  
-                  <p className="description" style={{ color: 'blue' }}>
+                  <p className="description" style={{ color: 'blue' ,
+                     textShadow: "0 0 8px rgba(0, 0, 255, 0.8), 0 0 20px rgba(0, 0, 255, 0.6)", // Adds glow
+                     fontSize: "2rem",
+                   }}>
                   Nous traitons et envoyons votre candidature à notre intermédiaire en 24h. Inscrivez vous maintenant pour lancer votre carrière au Canada !
                   </p> 
                   <div className="header-text">
@@ -555,20 +734,26 @@ function App() {
           </div>
           <div className="col-sm-4">
             <div className="single-horizontal-timeline">
-              <div className="experience-time" style={{ color: 'blue' }}>
-                <h2>Recrutement
-                </h2>
+              <div className="experience-time" style={{ color: 'blue' ,
+                   fontSize: "2.5rem", // Makes the text larger
+                 textShadow: "0 0 8px rgba(0, 0, 255, 0.8), 0 0 20px rgba(0, 0, 255, 0.6)", // Adds glow
+                 animation: "pulse 2s infinite", // Adds pulsing animation
+               }}>
+                <h1 
+                style={{
+                  fontSize: "3.1rem",
+           }}>Recrutement
+                </h1>
                
               </div>
-              {/*/.experience-time*/}
-              <div className="timeline-horizontal-border">
-                <i className="fa fa-circle" aria-hidden="true" />
-                <span className="single-timeline-horizontal" />
-              </div>
+             
               <div className="timeline">
                 <div className="timeline-content">
                  
-                  <p className="description" style={{ color: 'blue' }}>
+                  <p className="description" style={{ color: 'blue' ,
+                     textShadow: "0 0 8px rgba(0, 0, 255, 0.8), 0 0 20px rgba(0, 0, 255, 0.6)", // Adds glow
+                     fontSize: "2rem",
+                   }}>
                   Passez une entrevue avec notre agence intermédiaire. Nous optimiserons et publierons votre profil auprès d’employeurs canadiens.
                   </p>
                   <div className="header-text">
@@ -633,23 +818,26 @@ function App() {
           </div>
           <div className="col-sm-4">
             <div className="single-horizontal-timeline">
-              <div className="experience-time" style={{ color: 'blue' }}>
-                <h2>Votre profil en ligne !
-                </h2>
+              <div className="experience-time" style={{ color: 'blue' , 
+                  
+                 textShadow: "0 0 8px rgba(0, 0, 255, 0.8), 0 0 20px rgba(0, 0, 255, 0.6)", // Adds glow
+                 animation: "pulse 2s infinite", // Adds pulsing animation
+               }}>
+                <h1 
+                style={{
+                  fontSize: "3.1rem",
+           }}>Votre profil en ligne !
+                </h1>
               
               </div>
-              {/*/.experience-time*/}
-              <div className="timeline-horizontal-border">
-                <i className="fa fa-circle" aria-hidden="true" />
-                <span
-                  className="single-timeline-horizontal spacial-horizontal-line
-									"
-                />
-              </div>
+             
               <div className="timeline">
                 <div className="timeline-content">
                  
-                  <p className="description" style={{ color: 'blue' }}>
+                  <p className="description" style={{ color: 'blue' ,
+                     textShadow: "0 0 8px rgba(0, 0, 255, 0.8), 0 0 20px rgba(0, 0, 255, 0.6)", // Adds glow
+                     fontSize: "2rem",
+                  }}>
                   Réussissez l’examen et publiez votre profil auprès d’employeurs canadiens <br /> Votre opportunité canadienne vous attend !
                   </p>
                   <div className="header-text">
@@ -722,14 +910,21 @@ function App() {
   <section id="skills" className="skills">
     <div className="skill-content">
       <div className="section-heading text-center">
-        <h2>Nos services</h2>
+        <h2 
+         style={{ color: 'blue' ,
+          textShadow: "0 0 8px rgba(0, 0, 255, 0.8), 0 0 20px rgba(0, 0, 255, 0.6)", // Adds glow
+          animation: "pulse 2s infinite", // Adds pulsing animation
+          fontSize: "5rem",
+       }}>Nos services</h2>
       </div>
       <div className="container">
         <div className="row">
           <div className="col-md-6">
             <div className="single-skill-content">
               <div className="barWrapper">
-                <h2 className="progressText" style={{ color: 'blue' }}>Dépôt de demande de résidence permanente en ligne</h2>
+                <h2 className="progressText" style={{ color: 'blue' ,
+                      textShadow: "0 0 8px rgba(0, 0, 255, 0.8), 0 0 20px rgba(0, 0, 255, 0.6)", // Adds glow
+                 }}><FaCheckCircle  /> {" "} Dépôt de demande de résidence permanente en ligne</h2>
                 <div className="single-progress-txt">
                   <div className="progress ">
                     <div
@@ -746,7 +941,9 @@ function App() {
               </div>
               {/* /.barWrapper */}
               <div className="barWrapper">
-                <h2 className="progressText" style={{ color: 'blue' }}>Programmes de nomination provinciale</h2>
+                <h2 className="progressText" style={{ color: 'blue' ,
+                      textShadow: "0 0 8px rgba(0, 0, 255, 0.8), 0 0 20px rgba(0, 0, 255, 0.6)", // Adds glow
+                }}><FaCheckCircle  /> {" "} Programmes de nomination provinciale</h2>
                 <div className="single-progress-txt">
                   <div className="progress ">
                     <div
@@ -763,7 +960,9 @@ function App() {
               </div>
               {/* /.barWrapper */}
               <div className="barWrapper">
-              <h2 className="progressText" style={{ color: 'blue' }}>Résidence permanente pour étrangers et travailleurs étrangers au Canada</h2>
+              <h2 className="progressText" style={{ color: 'blue' ,
+                    textShadow: "0 0 8px rgba(0, 0, 255, 0.8), 0 0 20px rgba(0, 0, 255, 0.6)", // Adds glow
+              }}><FaCheckCircle  /> {" "}Résidence permanente pour étrangers et travailleurs étrangers au Canada</h2>
                 <div className="single-progress-txt">
                   <div className="progress ">
                     <div
@@ -780,7 +979,9 @@ function App() {
               </div>
               {/* /.barWrapper */}
               <div className="barWrapper">
-                <h2 className="progressText" style={{ color: 'blue' }}>Programme de l’expérience du Québec : Résidence permanente</h2>
+                <h2 className="progressText" style={{ color: 'blue' , 
+                      textShadow: "0 0 8px rgba(0, 0, 255, 0.8), 0 0 20px rgba(0, 0, 255, 0.6)", // Adds glow
+                 }}><FaCheckCircle  /> {" "}Programme de l’expérience du Québec : Résidence permanente</h2>
                 <div className="single-progress-txt">
                   <div className="progress ">
                     <div
@@ -801,7 +1002,9 @@ function App() {
           <div className="col-md-6">
             <div className="single-skill-content">
               <div className="barWrapper">
-              <h2 className="progressText" style={{ color: 'blue' }}>Entrée express au Canada</h2>
+              <h2 className="progressText" style={{ color: 'blue' ,
+                    textShadow: "0 0 8px rgba(0, 0, 255, 0.8), 0 0 20px rgba(0, 0, 255, 0.6)", // Adds glow
+              }}><FaCheckCircle  /> {" "}Entrée express au Canada</h2>
                 
                 <div className="single-progress-txt">
                   <div className="progress ">
@@ -819,7 +1022,9 @@ function App() {
               </div>
               {/* /.barWrapper */}
               <div className="barWrapper">
-                <h2 className="progressText" style={{ color: 'blue' }}>Parrainage d’épouse, époux, parents, membres de la famille</h2>
+                <h2 className="progressText" style={{ color: 'blue' ,
+                      textShadow: "0 0 8px rgba(0, 0, 255, 0.8), 0 0 20px rgba(0, 0, 255, 0.6)", // Adds glow
+                 }}><FaCheckCircle  /> {" "}Parrainage d’épouse, époux, parents, membres de la famille</h2>
                 <div className="single-progress-txt">
                   <div className="progress ">
                     <div
@@ -836,7 +1041,9 @@ function App() {
               </div>
               {/* /.barWrapper */}
               <div className="barWrapper">
-                <h2 className="progressText" style={{ color: 'blue' }}>Révision administrative en cas de refus de demande de résidence permanente.</h2>
+                <h2 className="progressText" style={{ color: 'blue' ,
+                      textShadow: "0 0 8px rgba(0, 0, 255, 0.8), 0 0 20px rgba(0, 0, 255, 0.6)", // Adds glow
+                 }}><FaCheckCircle  /> {" "}Révision administrative en cas de refus de demande de résidence permanente.</h2>
                 <div className="single-progress-txt">
                   <div className="progress ">
                     <div
@@ -853,7 +1060,9 @@ function App() {
               </div>
               {/* /.barWrapper */}
               <div className="barWrapper">
-                <h2 className="progressText" style={{ color: 'blue' }}>Super visa pour les parents</h2>
+                <h2 className="progressText" style={{ color: 'blue' ,
+                      textShadow: "0 0 8px rgba(0, 0, 255, 0.8), 0 0 20px rgba(0, 0, 255, 0.6)", // Adds glow
+                 }}><FaCheckCircle  /> {" "}Super visa pour les parents</h2>
                 <div className="single-progress-txt">
                   <div className="progress ">
                     <div
@@ -892,26 +1101,22 @@ function App() {
   <section id="portfolio" className="portfolio">
     <div className="portfolio-details">
       <div className="section-heading text-center">
-        <h2>
+        <h2 
+         style={{ color: 'blue' ,
+          textShadow: "0 0 8px rgba(0, 0, 255, 0.8), 0 0 20px rgba(0, 0, 255, 0.6)", // Adds glow
+          animation: "pulse 2s infinite", // Adds pulsing animation
+          fontSize: "5rem",
+       }}>
         Immigrer</h2>
       </div>
-      <div className="container">
-      <div className="education-horizontal-timeline">
-        <div className="row">
-          <div className='immm'>
-          <div className="col-sm-4">
-       <img src='https://res.cloudinary.com/dqmhtibfm/image/upload/c_scale,w_300/v1728300244/461686964_397934080024992_2164055834110112573_n_a6a6sv.jpg' /> <br/>{' '}<br/> 
-          </div>
-          <div className="col-sm-4">
-         <img src='https://res.cloudinary.com/dqmhtibfm/image/upload/c_scale,w_300/v1728300243/448637873_328391340312600_4456661122956899813_n_dgljsk.jpg' /> <br/>{' '}<br/> 
-          </div>
-          <div className="col-sm-4">
-          <img src='https://res.cloudinary.com/dqmhtibfm/image/upload/c_scale,w_300/v1728300244/461325469_394908110327589_1370934135166326436_n_tfrv95.jpg' /> <br/>{' '}<br/> 
-          </div>
-        </div>
-        </div>
-      </div>
-    </div>
+      <center>
+      <div 
+                >
+                      <img onClick={navigateToURL}  src='https://res.cloudinary.com/dqmhtibfm/image/upload/c_scale,w_300/v1734596037/IMG_4378_kivpco.jpg'  /> 
+                      <img  src='https://res.cloudinary.com/dqmhtibfm/image/upload/c_scale,w_300/v1734596037/IMG_4381_e23fhl.jpg' /> 
+                      <img  src='https://res.cloudinary.com/dqmhtibfm/image/upload/c_scale,w_300/v1734596037/IMG_4379_r7hh4y.jpg' />
+                     </div>
+                     </center>
       {/*/.container*/}
     </div>
     {/*/.portfolio-details*/}
@@ -923,9 +1128,14 @@ function App() {
   {/*/.clients*/}
   {/*clients end */}
   {/*contact start */}
-  <section id="contact" className="contact">
+  <section id="contact" className="contact" >
     <div className="section-heading text-center">
-      <h2>contact me</h2>
+      <h2 
+       style={{ color: 'blue' ,
+        textShadow: "0 0 8px rgba(0, 0, 255, 0.8), 0 0 20px rgba(0, 0, 255, 0.6)", // Adds glow
+        animation: "pulse 2s infinite", // Adds pulsing animation
+        fontSize: "5rem",
+     }}>contact me</h2>
     </div>
     <div className="container">
       <div className="contact-content">
