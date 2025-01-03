@@ -334,7 +334,7 @@ function App() {
            
               <div className="row">
               <h4  style={{ color: 'blue' ,
-                  textShadow: "0 0 8px rgba(0, 0, 255, 0.8), 0 0 20px rgba(0, 0, 255, 0.6)", // Adds glow
+                 
          // Adds pulsing animation
                   fontSize: "2.8rem",
                }}>
@@ -383,7 +383,7 @@ function App() {
                src='https://res.cloudinary.com/dqmhtibfm/image/upload/v1734985910/australia-flag__46117.1639690361.1280.1280_i2pkis.webp' />
                </center>
                 <h4  style={{ color: 'blue' ,
-                  textShadow: "0 0 8px rgba(0, 0, 255, 0.8), 0 0 20px rgba(0, 0, 255, 0.6)", // Adds glow
+                 
          // Adds pulsing animation
                   fontSize: "2.8rem",
                }}>
@@ -667,7 +667,7 @@ function App() {
                 <div className="timeline-content">
                  
                   <p className="description" style={{ color: 'blue' ,
-                     textShadow: "0 0 8px rgba(0, 0, 255, 0.8), 0 0 20px rgba(0, 0, 255, 0.6)", // Adds glow
+                   
                      fontSize: "2rem",
                    }}>
                   Nous traitons et envoyons votre candidature à notre intermédiaire en 24h. Inscrivez vous maintenant pour lancer votre carrière au Canada !
@@ -677,53 +677,10 @@ function App() {
            
                   <div className="card-container">
       {/* Clickable link to toggle the form */}
-      <a href="/" onClick={handleLinkClick} className="card-link">
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLScIM1y0guqfeL5Oe0hpOkI2aH6jBZtqiYoVUIB_44FppH3GgA/viewform?usp=dialog"  className="card-link">
         {showForm ? 'Close Form' : 'Postuler maintenant'} {/* Change text based on form visibility */}
       </a>
 
-      {/* Form to be displayed/hidden based on showForm state */}
-      {showForm && (
-        <div className="form-card">
-          <img
-            className="logoo"
-            src="https://res.cloudinary.com/dqmhtibfm/image/upload/c_scale,w_100/v1727988019/384192148_175238912294511_1146351560083594850_n_t5inpi.jpg"
-            alt="Logo"
-          />
-          <form onSubmit={handleSubmit}>
-            <div className="form-group">
-              <label htmlFor="name">Name:</label>
-              <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} required />
-            </div>
-            <div className="form-group">
-              <label htmlFor="email">Email:</label>
-              <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} required />
-            </div>
-            <div className="form-group">
-              <label htmlFor="phone">Phone Number:</label>
-              <input type="tel" id="phone" name="phone" value={formData.phone} onChange={handleChange} required />
-            </div>
-            <div className="form-group">
-              <label htmlFor="passport">Upload Passport:</label>
-              <input type="file" id="passport" name="passport" accept="application/pdf" onChange={handleChange} required />
-            </div>
-            <div className="form-group">
-              <label htmlFor="b3">Upload B3:</label>
-              <input type="file" id="b3" name="b3" accept="application/pdf" onChange={handleChange} required />
-            </div>
-            <div className="form-group">
-              <label htmlFor="diplome">Upload Diplome:</label>
-              <input type="file" id="diplome" name="diplome" accept="application/pdf" onChange={handleChange} required />
-            </div>
-            <div className="form-group">
-              <label htmlFor="acte">Upload Acte:</label>
-              <input type="file" id="acte" name="acte" accept="application/pdf" onChange={handleChange} required />
-            </div>
-            <div className="form-group">
-              <button type="submit" className="submit-btn">Submit</button>
-            </div>
-          </form>
-        </div>
-      )}
     </div>
           </div>
                 </div>
@@ -751,7 +708,7 @@ function App() {
                 <div className="timeline-content">
                  
                   <p className="description" style={{ color: 'blue' ,
-                     textShadow: "0 0 8px rgba(0, 0, 255, 0.8), 0 0 20px rgba(0, 0, 255, 0.6)", // Adds glow
+                   
                      fontSize: "2rem",
                    }}>
                   Passez une entrevue avec notre agence intermédiaire. Nous optimiserons et publierons votre profil auprès d’employeurs canadiens.
@@ -761,53 +718,10 @@ function App() {
            
                   <div className="card-container">
       {/* Clickable link to toggle the form */}
-      <a href="/" onClick={handleLinkClick} className="card-link">
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLScIM1y0guqfeL5Oe0hpOkI2aH6jBZtqiYoVUIB_44FppH3GgA/viewform?usp=dialog"  className="card-link">
         {showForm ? 'Close Form' : 'Postuler maintenant'} {/* Change text based on form visibility */}
       </a>
 
-      {/* Form to be displayed/hidden based on showForm state */}
-      {showForm && (
-        <div className="form-card">
-          <img
-            className="logoo"
-            src="https://res.cloudinary.com/dqmhtibfm/image/upload/c_scale,w_100/v1727988019/384192148_175238912294511_1146351560083594850_n_t5inpi.jpg"
-            alt="Logo"
-          />
-          <form onSubmit={handleSubmit}>
-            <div className="form-group">
-              <label htmlFor="name">Name:</label>
-              <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} required />
-            </div>
-            <div className="form-group">
-              <label htmlFor="email">Email:</label>
-              <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} required />
-            </div>
-            <div className="form-group">
-              <label htmlFor="phone">Phone Number:</label>
-              <input type="tel" id="phone" name="phone" value={formData.phone} onChange={handleChange} required />
-            </div>
-            <div className="form-group">
-              <label htmlFor="passport">Upload Passport:</label>
-              <input type="file" id="passport" name="passport" accept="application/pdf" onChange={handleChange} required />
-            </div>
-            <div className="form-group">
-              <label htmlFor="b3">Upload B3:</label>
-              <input type="file" id="b3" name="b3" accept="application/pdf" onChange={handleChange} required />
-            </div>
-            <div className="form-group">
-              <label htmlFor="diplome">Upload Diplome:</label>
-              <input type="file" id="diplome" name="diplome" accept="application/pdf" onChange={handleChange} required />
-            </div>
-            <div className="form-group">
-              <label htmlFor="acte">Upload Acte:</label>
-              <input type="file" id="acte" name="acte" accept="application/pdf" onChange={handleChange} required />
-            </div>
-            <div className="form-group">
-              <button type="submit" className="submit-btn">Submit</button>
-            </div>
-          </form>
-        </div>
-      )}
     </div>
           </div>
                 </div>
@@ -835,7 +749,7 @@ function App() {
                 <div className="timeline-content">
                  
                   <p className="description" style={{ color: 'blue' ,
-                     textShadow: "0 0 8px rgba(0, 0, 255, 0.8), 0 0 20px rgba(0, 0, 255, 0.6)", // Adds glow
+                     
                      fontSize: "2rem",
                   }}>
                   Réussissez l’examen et publiez votre profil auprès d’employeurs canadiens <br /> Votre opportunité canadienne vous attend !
@@ -849,49 +763,7 @@ function App() {
         {showForm ? 'Close Form' : 'Postuler maintenant'} {/* Change text based on form visibility */}
       </a>
 
-      {/* Form to be displayed/hidden based on showForm state */}
-      {showForm && (
-        <div className="form-card">
-          <img
-            className="logoo"
-            src="https://res.cloudinary.com/dqmhtibfm/image/upload/c_scale,w_100/v1727988019/384192148_175238912294511_1146351560083594850_n_t5inpi.jpg"
-            alt="Logo"
-          />
-          <form onSubmit={handleSubmit}>
-            <div className="form-group">
-              <label htmlFor="name">Name:</label>
-              <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} required />
-            </div>
-            <div className="form-group">
-              <label htmlFor="email">Email:</label>
-              <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} required />
-            </div>
-            <div className="form-group">
-              <label htmlFor="phone">Phone Number:</label>
-              <input type="tel" id="phone" name="phone" value={formData.phone} onChange={handleChange} required />
-            </div>
-            <div className="form-group">
-              <label htmlFor="passport">Upload Passport:</label>
-              <input type="file" id="passport" name="passport" accept="application/pdf" onChange={handleChange} required />
-            </div>
-            <div className="form-group">
-              <label htmlFor="b3">Upload B3:</label>
-              <input type="file" id="b3" name="b3" accept="application/pdf" onChange={handleChange} required />
-            </div>
-            <div className="form-group">
-              <label htmlFor="diplome">Upload Diplome:</label>
-              <input type="file" id="diplome" name="diplome" accept="application/pdf" onChange={handleChange} required />
-            </div>
-            <div className="form-group">
-              <label htmlFor="acte">Upload Acte:</label>
-              <input type="file" id="acte" name="acte" accept="application/pdf" onChange={handleChange} required />
-            </div>
-            <div className="form-group">
-              <button type="submit" className="submit-btn">Submit</button>
-            </div>
-          </form>
-        </div>
-      )}
+      
     </div>
           </div>
                 </div>
@@ -923,7 +795,7 @@ function App() {
             <div className="single-skill-content">
               <div className="barWrapper">
                 <h2 className="progressText" style={{ color: 'blue' ,
-                      textShadow: "0 0 8px rgba(0, 0, 255, 0.8), 0 0 20px rgba(0, 0, 255, 0.6)", // Adds glow
+                    
                  }}><FaCheckCircle  /> {" "} Dépôt de demande de résidence permanente en ligne</h2>
                 <div className="single-progress-txt">
                   <div className="progress ">
@@ -942,7 +814,7 @@ function App() {
               {/* /.barWrapper */}
               <div className="barWrapper">
                 <h2 className="progressText" style={{ color: 'blue' ,
-                      textShadow: "0 0 8px rgba(0, 0, 255, 0.8), 0 0 20px rgba(0, 0, 255, 0.6)", // Adds glow
+                     
                 }}><FaCheckCircle  /> {" "} Programmes de nomination provinciale</h2>
                 <div className="single-progress-txt">
                   <div className="progress ">
@@ -961,7 +833,7 @@ function App() {
               {/* /.barWrapper */}
               <div className="barWrapper">
               <h2 className="progressText" style={{ color: 'blue' ,
-                    textShadow: "0 0 8px rgba(0, 0, 255, 0.8), 0 0 20px rgba(0, 0, 255, 0.6)", // Adds glow
+                   
               }}><FaCheckCircle  /> {" "}Résidence permanente pour étrangers et travailleurs étrangers au Canada</h2>
                 <div className="single-progress-txt">
                   <div className="progress ">
@@ -980,7 +852,7 @@ function App() {
               {/* /.barWrapper */}
               <div className="barWrapper">
                 <h2 className="progressText" style={{ color: 'blue' , 
-                      textShadow: "0 0 8px rgba(0, 0, 255, 0.8), 0 0 20px rgba(0, 0, 255, 0.6)", // Adds glow
+                     
                  }}><FaCheckCircle  /> {" "}Programme de l’expérience du Québec : Résidence permanente</h2>
                 <div className="single-progress-txt">
                   <div className="progress ">
@@ -1003,7 +875,7 @@ function App() {
             <div className="single-skill-content">
               <div className="barWrapper">
               <h2 className="progressText" style={{ color: 'blue' ,
-                    textShadow: "0 0 8px rgba(0, 0, 255, 0.8), 0 0 20px rgba(0, 0, 255, 0.6)", // Adds glow
+                   
               }}><FaCheckCircle  /> {" "}Entrée express au Canada</h2>
                 
                 <div className="single-progress-txt">
@@ -1023,7 +895,7 @@ function App() {
               {/* /.barWrapper */}
               <div className="barWrapper">
                 <h2 className="progressText" style={{ color: 'blue' ,
-                      textShadow: "0 0 8px rgba(0, 0, 255, 0.8), 0 0 20px rgba(0, 0, 255, 0.6)", // Adds glow
+                     
                  }}><FaCheckCircle  /> {" "}Parrainage d’épouse, époux, parents, membres de la famille</h2>
                 <div className="single-progress-txt">
                   <div className="progress ">
@@ -1042,7 +914,7 @@ function App() {
               {/* /.barWrapper */}
               <div className="barWrapper">
                 <h2 className="progressText" style={{ color: 'blue' ,
-                      textShadow: "0 0 8px rgba(0, 0, 255, 0.8), 0 0 20px rgba(0, 0, 255, 0.6)", // Adds glow
+                     
                  }}><FaCheckCircle  /> {" "}Révision administrative en cas de refus de demande de résidence permanente.</h2>
                 <div className="single-progress-txt">
                   <div className="progress ">
@@ -1061,7 +933,7 @@ function App() {
               {/* /.barWrapper */}
               <div className="barWrapper">
                 <h2 className="progressText" style={{ color: 'blue' ,
-                      textShadow: "0 0 8px rgba(0, 0, 255, 0.8), 0 0 20px rgba(0, 0, 255, 0.6)", // Adds glow
+                     
                  }}><FaCheckCircle  /> {" "}Super visa pour les parents</h2>
                 <div className="single-progress-txt">
                   <div className="progress ">
