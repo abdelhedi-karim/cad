@@ -845,7 +845,7 @@ function App() {
            
                   <div className="card-container">
       {/* Clickable link to toggle the form */}
-      <a href="/" onClick={handleLinkClick} className="card-link">
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLScIM1y0guqfeL5Oe0hpOkI2aH6jBZtqiYoVUIB_44FppH3GgA/viewform?usp=dialog"  className="card-link">
         {showForm ? 'Close Form' : 'Postuler maintenant'} {/* Change text based on form visibility */}
       </a>
 
