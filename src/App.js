@@ -13,6 +13,9 @@ import './responsive.css';
 import { FaCheckCircle, FaSpinner, FaGlobe } from 'react-icons/fa'; // Importing icons from react-icons
 import { Navbar, Nav } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faFacebook, faInstagram, faTiktok } from "@fortawesome/free-brands-svg-icons";
+
 const images = [
  
   'https://res.cloudinary.com/dqmhtibfm/image/upload/c_scale,h_200,w_200/v1728392585/428349701_254089804409421_5087268689471976810_n_bu9slb.jpg',
@@ -276,7 +279,7 @@ function App() {
           <Nav.Link style={{
               animation: "pulse 2s infinite", // Adds pulsing animation
               textShadow: "0 0 8px rgba(0, 0, 255, 0.8), 0 0 20px rgba(0, 0, 255, 0.6)", // Adds glow
-          }}  href="./Qr">QR</Nav.Link>
+          }}  href="#footer">QR</Nav.Link>
         </Nav>
         {/* Close Button at the Bottom */}
        
@@ -321,8 +324,6 @@ function App() {
     <div className="section-heading text-center">
       <h1
       style={{ color: 'blue' ,
-        textShadow: "0 0 8px rgba(0, 0, 255, 0.8), 0 0 20px rgba(0, 0, 255, 0.6)", // Adds glow
-        animation: "pulse 2s infinite", // Adds pulsing animation
         fontSize: "5rem",
      }}>à propos de nous</h1>
     </div>
@@ -392,39 +393,29 @@ function App() {
               </h4>
               <div className="col-sm-4">
                   <div className="single-about-add-info">
-                  <div 
-                  style={{
-                    display: "flex",
-                    alignItems: "center", // Corrected to camelCase
-                    justifyContent: "flex-start", // Corrected to camelCase
-                   
-                  }}>
-                      <img onClick={navigateToURL} style={{marginLeft : "45px"}} src='https://res.cloudinary.com/dqmhtibfm/image/upload/c_scale,w_60/v1735114634/360_F_532200355_odKN9Ou3WB6iHWJTFIElFtJbTuzJspY6-removebg-preview_nc1ki9.png'  /> 
-                      <img style={{marginLeft : "50px"}} src='https://res.cloudinary.com/dqmhtibfm/image/upload/c_scale,w_60/v1735114635/360_F_532200382_KL6CDaZcusiZO9nO5TD7hWQEz8Ko6BZB-removebg-preview_isgezl.png' /> 
-                      <img style={{marginLeft : "30px"}} src='https://res.cloudinary.com/dqmhtibfm/image/upload/c_scale,h_100,w_100/v1735115241/tiktok-logo-pictures-98vku1w29x2enwhu-removebg-preview_gma1m0.png' />
-                     </div>
+               
                     <h3  style={{ color: 'blue' ,
-                        textShadow: "0 0 8px rgba(0, 0, 255, 0.8), 0 0 20px rgba(0, 0, 255, 0.6)", // Adds glow
+                       
                      
                         fontSize: "2rem",
                       }}>📞 {' '} phone</h3>
                     <p  style={{ color: 'blue' ,
-                        textShadow: "0 0 8px rgba(0, 0, 255, 0.8), 0 0 20px rgba(0, 0, 255, 0.6)", // Adds glow
+                       
                    
                         fontSize: "2rem",
                      }}>+ 216 92 602 851</p> <br/>
                      <p  style={{ color: 'blue' ,
-                        textShadow: "0 0 8px rgba(0, 0, 255, 0.8), 0 0 20px rgba(0, 0, 255, 0.6)", // Adds glow
+                       
                    
                         fontSize: "2rem",
                      }}>+ 216 92 602 851</p> <br/>
                       <h3  style={{ color: 'blue' ,
-                        textShadow: "0 0 8px rgba(0, 0, 255, 0.8), 0 0 20px rgba(0, 0, 255, 0.6)", // Adds glow
+                       
                    
                         fontSize: "2rem",
                      }}>📧 email</h3> <br/>
                     <p  style={{ color: 'blue' , 
-                        textShadow: "0 0 8px rgba(0, 0, 255, 0.8), 0 0 20px rgba(0, 0, 255, 0.6)", // Adds glow
+                       
                      
                         fontSize: "2rem",
                      }}>cadgocanadago@gmail.com</p>
@@ -433,13 +424,24 @@ function App() {
                 </div>
               </div>
             </div>
+            <center> <div className="social-icons">
+      <div className="icon facebook" onClick={() => window.open("https://www.facebook.com/profile.php?id=100094252105697", "_blank")}>
+        <FontAwesomeIcon icon={faFacebook} size="2x" />
+      </div> <br/>
+      <div className="icon instagram" onClick={() => window.open("https://www.instagram.com/cadgoservices/?hl=fr", "_blank")}>
+        <FontAwesomeIcon icon={faInstagram} size="2x" />
+      </div><br/>
+      <div className="icon tiktok" onClick={() => window.open("https://www.tiktok.com/@cad.go.services?_t=8pMLLOKi7kc&_r=1&fbclid=PAZXh0bgNhZW0CMTEAAaYQOP61-fwzJxu2wcKmDvHtzVdTjcn_rNwLZyTk5_6hKHRkn-aPNrEKM-o_aem_w3UhYOSEIzZlOwN_qRvfNg", "_blank")}>
+        <FontAwesomeIcon icon={faTiktok} size="2x" />
+      </div>
+    </div></center>
           </div>
           <div className="col-sm-offset-1 col-sm-5">
             <div >
               <img 
               style={{
-                animation: "pulse 2s infinite", // Adds pulsing animation
-                textShadow: "0 0 8px rgba(0, 0, 255, 0.8), 0 0 20px rgba(0, 0, 255, 0.6)", // Adds glow
+             
+             
               }}
                 src="https://res.cloudinary.com/dqmhtibfm/image/upload/v1727988019/384192148_175238912294511_1146351560083594850_n_t5inpi.jpg"
                 alt="profile_image"
@@ -449,9 +451,11 @@ function App() {
             </div>
           </div>
         </div>
+        
       </div>
     </div>
   </section>
+  
   {/*/.about*/}
  
 </>
@@ -547,8 +551,7 @@ function App() {
     <div className="section-heading text-center">
       <h2 
        style={{ color: 'blue' ,
-        textShadow: "0 0 8px rgba(0, 0, 255, 0.8), 0 0 20px rgba(0, 0, 255, 0.6)", // Adds glow
-        animation: "pulse 2s infinite", // Adds pulsing animation
+       
         fontSize: "5rem",
      }}>Nos agences
       </h2>
@@ -559,8 +562,7 @@ function App() {
           <div className="col-sm-4">
             <div className="single-horizontal-timeline">
               <div className="experience-time"  style={{ color: 'blue' ,
-                textShadow: "0 0 8px rgba(0, 0, 255, 0.8), 0 0 20px rgba(0, 0, 255, 0.6)", // Adds glow
-                
+               
               }}>
                 <h2 style={{
                        fontSize: "2.1rem",
@@ -576,7 +578,7 @@ function App() {
                 <div className="timeline-content">
                  
                   <p className="description"  style={{ color: 'blue' ,
-                    textShadow: "0 0 8px rgba(0, 0, 255, 0.8), 0 0 20px rgba(0, 0, 255, 0.6)", // Adds glow
+                 
                     fontSize: "2.1rem",
                   }}>
                  
@@ -595,7 +597,7 @@ function App() {
             <div className="single-horizontal-timeline">
               <div className="experience-time"  style={{ color: 'blue' , 
           
-                textShadow: "0 0 8px rgba(0, 0, 255, 0.8), 0 0 20px rgba(0, 0, 255, 0.6)", // Adds glow
+                
                }}>
                 <h2
                  style={{
@@ -614,7 +616,7 @@ function App() {
                  
                   <p className="description"  style={{ color: 'blue' , 
                     
-                    textShadow: "0 0 8px rgba(0, 0, 255, 0.8), 0 0 20px rgba(0, 0, 255, 0.6)", // Adds glow
+                   
                     fontSize: "2.1rem",
                    }}>
                 
@@ -640,8 +642,7 @@ function App() {
     <div className="section-heading text-center">
       <h2 
        style={{ color: 'blue' ,
-        textShadow: "0 0 8px rgba(0, 0, 255, 0.8), 0 0 20px rgba(0, 0, 255, 0.6)", // Adds glow
-        animation: "pulse 2s infinite", // Adds pulsing animation
+      
         fontSize: "5rem",
      }}>Procédures
       </h2>
@@ -653,8 +654,7 @@ function App() {
             <div className="single-horizontal-timeline">
               <div className="experience-time" style={{ color: 'blue' ,
                    fontSize: "2.5rem", // Makes the text larger
-                 textShadow: "0 0 8px rgba(0, 0, 255, 0.8), 0 0 20px rgba(0, 0, 255, 0.6)", // Adds glow
-                 animation: "pulse 2s infinite", // Adds pulsing animation
+                
                }}>
                 <h1 
                  style={{
@@ -693,8 +693,7 @@ function App() {
             <div className="single-horizontal-timeline">
               <div className="experience-time" style={{ color: 'blue' ,
                    fontSize: "2.5rem", // Makes the text larger
-                 textShadow: "0 0 8px rgba(0, 0, 255, 0.8), 0 0 20px rgba(0, 0, 255, 0.6)", // Adds glow
-                 animation: "pulse 2s infinite", // Adds pulsing animation
+                
                }}>
                 <h1 
                 style={{
@@ -733,9 +732,7 @@ function App() {
           <div className="col-sm-4">
             <div className="single-horizontal-timeline">
               <div className="experience-time" style={{ color: 'blue' , 
-                  
-                 textShadow: "0 0 8px rgba(0, 0, 255, 0.8), 0 0 20px rgba(0, 0, 255, 0.6)", // Adds glow
-                 animation: "pulse 2s infinite", // Adds pulsing animation
+                
                }}>
                 <h1 
                 style={{
@@ -784,8 +781,7 @@ function App() {
       <div className="section-heading text-center">
         <h2 
          style={{ color: 'blue' ,
-          textShadow: "0 0 8px rgba(0, 0, 255, 0.8), 0 0 20px rgba(0, 0, 255, 0.6)", // Adds glow
-          animation: "pulse 2s infinite", // Adds pulsing animation
+         
           fontSize: "5rem",
        }}>Nos services</h2>
       </div>
@@ -975,8 +971,7 @@ function App() {
       <div className="section-heading text-center">
         <h2 
          style={{ color: 'blue' ,
-          textShadow: "0 0 8px rgba(0, 0, 255, 0.8), 0 0 20px rgba(0, 0, 255, 0.6)", // Adds glow
-          animation: "pulse 2s infinite", // Adds pulsing animation
+        
           fontSize: "5rem",
        }}>
         Immigrer</h2>
@@ -1004,8 +999,7 @@ function App() {
     <div className="section-heading text-center">
       <h2 
        style={{ color: 'blue' ,
-        textShadow: "0 0 8px rgba(0, 0, 255, 0.8), 0 0 20px rgba(0, 0, 255, 0.6)", // Adds glow
-        animation: "pulse 2s infinite", // Adds pulsing animation
+       
         fontSize: "5rem",
      }}>contact me</h2>
     </div>
@@ -1106,9 +1100,9 @@ function App() {
     {/*/.container*/}
   </section>
   <div style={{ textAlign: 'center', marginTop: '50px' }}>
-      <h1>Scan the QR Code</h1>
+      <h1 style={{color : "blue"}}>Go To Cad Go</h1>
       <QRCodeSVG value={url} size={200} /> {/* Use QRCodeSVG */}
-      <p>Scan the QR code to visit the link</p>
+    
     </div>
   {/*/.contact*/}
   {/*contact end */}
@@ -1117,8 +1111,8 @@ function App() {
     <div className="container">
       <div className="hm-footer-copyright text-center">
         <p>
-          © copyright yourname. design and developed by{" "}
-          <a href="https://www.themesine.com/">themesine</a>
+          © copyright CAD GO{" "}2025
+          
         </p>
         {/*/p*/}
       </div>
@@ -1130,20 +1124,7 @@ function App() {
         <i className="fa fa-angle-up " id="scroll-top" />
       </div>
     </div>
-    {/*/.scroll-Top*/}
-    <div>
-            <h1>Formulaire Entries</h1>
-            {error && <p style={{ color: 'red' }}>{error}</p>}
-            <ul>
-                {formulaires.map((formulaire, index) => (
-                    <li key={index}>
-                        <strong>Name:</strong> {formulaire.name}, 
-                        <strong>Email:</strong> {formulaire.mail}, 
-                        <strong>Phone:</strong> {formulaire.number}
-                    </li>
-                ))}
-            </ul>
-        </div>
+   
   </footer>
   {/*/.footer-copyright*/}
   {/*footer-copyright end*/}
