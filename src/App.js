@@ -33,7 +33,7 @@ const images3 = [
   "https://res.cloudinary.com/dqmhtibfm/image/upload/c_scale,h_97,w_150/v1727990013/flag-of-the-european-union-eu-with-a-grunge-texture_t4vday.webp",
 ];
 function App() {
-  const url = "https://cad-liart.vercel.app/";
+  const url = "https://go-cad-canada.com/";
   const [currentIndex, setCurrentIndex] = useState(0);
   const [currentIndex1, setCurrentIndex1] = useState(0);
   const [currentIndex2, setCurrentIndex2] = useState(0);
