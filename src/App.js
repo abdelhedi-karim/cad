@@ -1031,7 +1031,7 @@ function App() {
        style={{ color: 'blue' ,
        
         fontSize: "5rem",
-     }}>contact me</h2>
+     }}>Contactez-nous</h2>
     </div>
     <div className="container">
       <div className="contact-content">
