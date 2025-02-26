@@ -987,6 +987,7 @@ function App() {
     boxShadow: "0 10px 20px rgba(0, 0, 0, 0.2)", // Fixed camelCase
     transformOrigin: "center",
     transition: "transform 0.8s ease, box-shadow 0.5s ease",
+    marginTop: "30px",
   }}
   src="https://res.cloudinary.com/dqmhtibfm/image/upload/c_scale,w_300/v1727990013/flag-of-the-european-union-eu-with-a-grunge-texture_t4vday.webp"
   alt="European Union Flag" // Added for accessibility
@@ -994,11 +995,13 @@ function App() {
 
                       <img 
                        style={{
+                
                         backgroundColor: "white", // Fixed camelCase
                         borderRadius: "10px", // Fixed camelCase
                         boxShadow: "0 10px 20px rgba(0, 0, 0, 0.2)", // Fixed camelCase
                         transformOrigin: "center",
                         transition: "transform 0.8s ease, box-shadow 0.5s ease",
+                        marginTop: "30px",
                       }}  src='https://res.cloudinary.com/dqmhtibfm/image/upload/c_scale,h_200,w_300/v1727990013/360_F_65124908_UpNHzTdQn2HNAIT8yYqybMQeGfsRmVc7_yn5cae.webp' /> {" " } 
                       <img  
                        style={{
@@ -1007,6 +1010,7 @@ function App() {
                         boxShadow: "0 10px 20px rgba(0, 0, 0, 0.2)", // Fixed camelCase
                         transformOrigin: "center",
                         transition: "transform 0.8s ease, box-shadow 0.5s ease",
+                        marginTop: "30px",
                       }} src='https://res.cloudinary.com/dqmhtibfm/image/upload/c_scale,h_200,w_300/v1727989860/360_F_104479185_98OwiNHENKbunQqpf283ZCQN9PJBPoDP_nzp3mh.webp' />
                      </div>
                      </center>
